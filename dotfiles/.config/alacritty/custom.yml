@@ -1,0 +1,23 @@
+colors:
+	primary:
+  	background: "#000000"
+	foreground: "#d2d8d9"
+	cursor: "#d2d8d9"
+
+normal:
+    color0: "#000000"
+    color1: "#4D4E4E"
+    color2: "#5D6160"
+    color3: "#6B7071"
+    color4: "#95705F"
+    color5: "#7B8587"
+    color6: "#949A9C"
+    color7: "#d2d8d9"
+    color8: "#939797"
+    color9: "#4D4E4E"
+    color10: "#5D6160"
+    color11: "#6B7071"
+    color12: "#95705F"
+    color13: "#7B8587"
+    color14: "#949A9C"
+    color15: "#d2d8d9"

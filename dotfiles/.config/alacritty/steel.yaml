@@ -1,0 +1,32 @@
+# Colors (Gruvbox dark)
+colors:
+  # Default colors
+  primary:
+    # hard contrast: background = '0x1d2021'
+    background: '0x000000'
+    # soft contrast: background = '0x32302f'
+    foreground: '0xd2d8d9'
+
+  # Normal colors
+  normal:
+  #0
+    black:   '0x000000'
+    red:     '0x4d4e4e'
+    green:   '0x5D6160'
+    yellow:  '0x6B7071'
+    blue:    '0x950000'
+    magenta: '0x7B8587'
+    cyan:    '0x949A9C'
+    white:   '0xD2D8D9'
+
+  # Bright colors
+  bright:
+  #8
+    black:   '0x939797'
+    red:     '0x4d4e4e'
+    green:   '0x5D6160'
+    yellow:  '0x6B7071'
+    blue:    '0x950000'
+    magenta: '0x7B8587'
+    cyan:    '0x949A9C'
+    white:   '0xD2D8D9'

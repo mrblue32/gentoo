@@ -1,0 +1,16 @@
+####################################################
+## this is example configuration file, copy it to ##
+## ~/.ncmpcpp/config and set up your preferences  ##
+####################################################
+#
+##### connection settings #####
+#
+## set it in order to make tag editor and renaming files work properly
+#
+mpd_host = "192.168.0.105"
+#
+mpd_port = "6600"
+#
+mpd_music_dir = "/home/lumi/Music"
+#
+mpd_connection_timeout = "5"

@@ -1,0 +1,82 @@
+set previewer lf-ueberzug-previewer
+set cleaner lf-ueberzug-cleaner
+
+# Basic Settings
+set hidden true
+set ignorecase true
+set icons true
+
+# Custom Functions
+cmd mkdir ${{
+  printf "Directory Name: "
+  read ans
+  mkdir $ans
+}}
+
+cmd mkfile ${{
+  printf "File Name: "
+  read ans
+  $touch $ans
+}}
+
+cmd rename ${{
+  basename "$f" > $HOME/github/lf-ueberzug/rename.txt
+  vim --clean $HOME/github/lf-ueberzug/rename.txt
+  mv "$f" "$(cat $HOME/github/lf-ueberzug/rename.txt)"
+}}
+
+# Archive bindings
+cmd unarchive ${{
+  case "$f" in
+      *.zip) unzip "$f" ;;
+      *.tar.gz) tar -xzvf "$f" ;;
+      *.tar.bz2) tar -xjvf "$f" ;;
+      *.tar) tar -xvf "$f" ;;
+      *) echo "Unsupported format" ;;
+  esac
+}}
+
+cmd mpvmus ${{
+    mpv --no-video "$f"
+}}
+
+cmd backg ${{
+    $HOME/./.local/bin/wal -i "$f"
+	rm $HOME/wallpaper.*
+	cp "$f" $HOME/wallpaper.jpg
+    . $HOME/.local/bin/run-wal.sh
+}}
+
+
+# Bindings
+map d
+map m
+
+map au unarchive
+map ae $wine "$f"
+
+# Basic Functions
+map R rename
+map C clear
+map P mpvmus
+map V $vim "$f"
+map bG backg
+map . set hidden!
+map dd $rm "$f"
+map p paste
+map x cut
+map y copy
+map <enter> open
+map rr reload
+map mf mkfile
+map md mkdir
+
+# Movement
+map gD cd ~/Documents
+map gd cd ~/Downloads
+map gp cd ~/Pictures
+map gc cd ~/.config
+map gv cd ~/Videos
+map gs cd ~/.local/bin
+
+#$(cat ~/.cache/wal/sequences &)
