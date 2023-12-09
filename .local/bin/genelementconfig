@@ -1,1 +1,67 @@
-/home/lumi/github/element-wal/genelementconfig
+#!/bin/sh
+
+# Generates element-desktop theme
+
+. $HOME/.cache/wal/colors.sh
+
+CONFIG=$HOME/.config/SchildiChat/config.json
+PRE_WAL_CONFIG=$HOME/.config/SchildiChat/config_pre_wal.json
+
+# copy config if it exists
+if [[ -s $CONFIG ]]
+    then cp $CONFIG $PRE_WAL_CONFIG
+else
+    echo "{}" > $PRE_WAL_CONFIG
+fi
+
+cat $PRE_WAL_CONFIG | \
+
+# Delete Labs feature
+jq \
+'del(.showLabsSettings)' | \
+
+# Remove older Wal theme
+jq \
+'del(.settingDefaults.custom_themes[]? | select(.name == "Wal"))' | \
+
+# Add Labs feature back in
+jq \
+'. += {"showLabsSettings": true}' | \
+
+# Add new Wal theme
+jq \
+'.settingDefaults.custom_themes += [{
+            "name": "Wal",
+            "is_dark": true,
+            "colors": {
+                "accent-color": "'"$foreground"'",
+                "accent": "'"$color3"'",
+                "primary-color": "'"$color4"'",
+                "warning-color": "'"$color1"'",
+                "alert": "'"$color1"'",
+                "sidebar-color": "'"$background"'",
+                "roomlist-background-color": "'"$background"'",
+                "roomlist-text-color": "'"$foreground"'",
+                "roomlist-text-secondary-color": "'"$background"'",
+                "roomlist-highlights-color": "'"$color2"'",
+                "roomlist-separator-color": "'"$color5"'",
+                "timeline-background-color": "'"$background"'",
+                "timeline-text-color": "'"$foreground"'",
+                "timeline-text-secondary-color": "'"$foreground"'",
+                "timeline-highlights-color": "'"$color1"'",
+                "username-colors": ["'"$color0"'", "'"$color1"'", "'"$color2"'",
+                "'"$color3"'", "'"$color4"'", "'"$color5"'", "'"$color6"'",
+                "'"$color7"'"],
+                "avatar-background-colors": ["'"$color3"'", "'"$color4"'",
+                "'"$color5"'"],
+                "reaction-row-button-selected-bg-color": "'"$color4"'",
+                "menu-selected-color": "'"$color4"'",
+                "focus-bg-color": "'"$color4"'",
+                "room-highlight-color": "'"$color4"'",
+                "other-user-pill-bg-color": "'"$color4"'",
+                "icon-button-color": "'"$color6"'",
+                "togglesw-off-color": "'"$color4"'",
+                "secondary-content": "'"$foreground"'",
+                "tertiary-content": "'"$foreground"'"
+            }
+}]'

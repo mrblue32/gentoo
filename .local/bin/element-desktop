@@ -1,1 +1,16 @@
-/home/lumi/github/element-wal/element-desktop
+#!/bin/sh
+
+CONFIG=$HOME/.config/SchildiChat/config.json
+PRE_WAL_CONFIG=$HOME/.config/SchildiChat/config_pre_wal.json
+
+# add the wal theme
+genelementconfig > $CONFIG
+
+PATH="/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/"
+
+# kill element if theme changed and start it to have it load the new configuration
+#if [[ $(diff $CONFIG $PRE_WAL_CONFIG | wc -c) -ne 0 ]];
+#    then ps -Ao pid= -o args= | awk '$5 ~ /schildi/ { print $1}' | xargs kill;
+#fi
+#
+2>/dev/null 1>&2 element-desktop &
