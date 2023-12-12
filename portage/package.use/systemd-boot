@@ -1,0 +1,19 @@
+sys-apps/systemd-utils boot
+# required by x11-base/xorg-server-21.1.9::gentoo
+# required by x11-drivers/xf86-input-libinput-1.4.0::gentoo
+# required by x11-base/xorg-drivers-21.1-r2::gentoo[input_devices_libinput]
+>=media-libs/libglvnd-1.7.0 X
+# required by x11-base/xorg-drivers-21.1-r2::gentoo[video_cards_intel]
+>=x11-base/xorg-server-21.1.9 -minimal
+# required by www-client/librewolf-120.0.1_p1::librewolf[system-libvpx]
+# required by www-client/librewolf (argument)
+>=media-libs/libvpx-1.13.1-r1 postproc
+# required by x11-libs/gtk+-3.24.38::gentoo
+# required by x11-themes/adwaita-icon-theme-45.0::gentoo
+# required by virtual/freedesktop-icon-theme-0-r4::gentoo
+# required by www-client/librewolf-120.0.1_p1::librewolf
+# required by www-client/librewolf (argument)
+>=x11-libs/cairo-1.18.0 X
+# required by www-client/librewolf-120.0.1_p1::librewolf[X]
+# required by www-client/librewolf (argument)
+>=x11-libs/libxkbcommon-1.6.0 X
