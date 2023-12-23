@@ -3,6 +3,13 @@ set hidden true
 set ignorecase true
 set icons true
 
+
+cmd backg ${{
+	rm $HOME/wallpaper.*
+	cp "$f" $HOME/wallpaper$(ls "$f" | grep -Eo "\..*$")
+    /usr/bin/./feh --bg-fill "$f"
+}}
+
 # Custom Functions
 cmd mkdir ${{
   printf "Directory Name: "
@@ -33,6 +40,14 @@ cmd unarchive ${{
   esac
 }}
 
+cmd mpv ${{
+	  /usr/bin/mpv "$f"
+}}
+
+cmd feh ${{
+	  /usr/bin/./feh "$f"
+}}
+
 
 # Bindings
 map d
@@ -41,11 +56,14 @@ map m
 map au unarchive
 map ae $wine "$f"
 map V $vim "$f"
+map bg backg
+map bf feh
+map mp mpv
 
 # Basic Functions
 map . set hidden!
-map dd trash
-map dr restore_trash
+map dd !rm -r
+map dr !rm
 map p paste
 map x cut
 map y copy
