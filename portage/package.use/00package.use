@@ -1,0 +1,78 @@
+*/* CPU_FLAGS_X86: aes avx avx2 f16c fma3 mmx mmxext pclmul popcnt rdrand sse sse2 sse3 sse4_1 sse4_2 ssse3
+*/* -bluetooth -ldap -nls -qt3support -udisks
+sys-kernel/gentoo-sources
+sys-kernel/gentoo-kernel-bin -initramfs
+sys-kernel/gentoo-kernel -initramfs
+app-crypt/gnupg -usb
+www-client/librewolf
+media-video/mpv -bluray -drm -egl -gamepad -lua -luajit -pipewire -raspberry-pi -sdl -sixel -uchardet sndio tools zimg LUA_SINGLE_TARGET="-luajit -lua5-1"
+media-gfx/krita -qtmedia -heif -debug -pdf -test
+dev-libs/openssl asm sctp
+net-p2p/deluge -gui -libnotify -sound -test console webinterface
+net-misc/curl
+x11-themes/gentoo-artwork -grub -icons -lilo pixmaps offensive
+media-gfx/feh curl
+media-sound/pulseaudio -daemon 
+media-video/pipewire -sound-server
+# required by net-p2p/deluge-2.1.1-r4::gentoo
+# required by net-p2p/deluge (argument)
+>=net-libs/libtorrent-rasterbar-2.0.9 python
+# required by net-libs/libtorrent-rasterbar-2.0.9::gentoo[python_single_target_python3_11,python]
+# required by net-p2p/deluge-2.1.1-r4::gentoo
+# required by net-p2p/deluge (argument)
+>=dev-libs/boost-1.83.0-r3 python
+# required by x11-base/xorg-server-21.1.9::gentoo
+# required by x11-drivers/xf86-input-libinput-1.4.0::gentoo
+# required by x11-base/xorg-drivers-21.1-r2::gentoo[input_devices_libinput]
+>=media-libs/libglvnd-1.7.0 X
+# required by x11-base/xorg-drivers-21.1-r2::gentoo[video_cards_intel]
+>=x11-base/xorg-server-21.1.9 -minimal
+# required by www-client/librewolf-120.0.1_p1::librewolf[system-libvpx]
+# required by www-client/librewolf (argument)
+>=media-libs/libvpx-1.13.1-r1 postproc
+# required by x11-libs/gtk+-3.24.38::gentoo
+# required by x11-themes/adwaita-icon-theme-45.0::gentoo
+# required by virtual/freedesktop-icon-theme-0-r4::gentoo
+# required by www-client/librewolf-120.0.1_p1::librewolf
+# required by www-client/librewolf (argument)
+>=x11-libs/cairo-1.18.0 X
+# required by www-client/librewolf-120.0.1_p1::librewolf[X]
+# required by www-client/librewolf (argument)
+>=x11-libs/libxkbcommon-1.6.0 X
+# required by app-admin/pass-1.7.4-r2::gentoo
+# required by app-admin/pass (argument)
+>=media-gfx/qrencode-4.1.1 png
+>=app-admin/pass-1.7.4-r2 -*
+# required by net-print/cups-filters-1.28.17-r2::gentoo[postscript]
+# required by net-print/cups-2.4.7-r1::gentoo
+# required by net-print/cups (argument)
+#>=app-text/ghostscript-gpl-10.02.1 cups
+# required by x11-misc/xdg-utils-1.1.3_p20210805-r1::gentoo
+# required by x11-misc/xdg-utils (argument)
+>=app-text/xmlto-0.0.28-r11 text
+sys-fs/fuse:0 static-libs
+# required by x11-base/xorg-server-21.1.9::gentoo
+# required by x11-drivers/xf86-input-libinput-1.4.0::gentoo
+# required by x11-base/xorg-drivers-21.1-r2::gentoo[input_devices_libinput]
+>=media-libs/libglvnd-1.7.0 X
+# required by x11-base/xorg-drivers-21.1-r2::gentoo[video_cards_intel]
+>=x11-base/xorg-server-21.1.9 -minimal
+# required
+>=sys-apps/systemd-utils-254.7 -sysusers -ukify -test -boot -kernel-install
+>=virtual/tmpfiles-0-r5-1 -systemd
+>=dev-libs/libgcrypt-1.10.3:0/20 verify-sig
+>=dev-util/github-cli-2.33.0 go
+# required by media-video/mpv-0.37.0::gentoo[vulkan]
+# required by media-video/mpv (argument)
+>=media-libs/vulkan-loader-1.3.268 X
+dev-vcs/git -pcre -mediawiki -perforce -tk
+dev-util/github-cli
+>=dev-libs/libpcre2-10.42-r1 -pcre16 -pcre32
+>=dev-perl/Net-SSLeay-1.920.0-r1 minimal
+# required by dev-lang/python-3.11.7::gentoo
+# required by dev-python/markupsafe-2.1.3::gentoo[python_targets_python3_11]
+# required by dev-python/jinja-3.1.2::gentoo
+# required by sys-apps/systemd-utils-254.7::gentoo[python_single_target_python3_11]
+# required by @selected
+# required by @world (argument)
+>=sys-libs/gdbm-1.23 berkdb

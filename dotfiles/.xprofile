@@ -4,4 +4,4 @@ slstatus &
 xss-lock --transfer-sleep-lock slock &
 
 picom -b
-feh --bg-fill /home/lumi/wallpaper.jpg
+feh --bg-fill /home/lumi/wallpaper.*

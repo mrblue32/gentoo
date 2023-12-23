@@ -13,7 +13,7 @@ window:
   padding:
     x: 2
     y: 8
-  opacity: 0.87
+  opacity: 1
 
 scrolling:
   history: 10000
@@ -32,7 +32,7 @@ font:
   bold_italic:
     family: Hack
     style: Bold Italic
-  size: 11
+  size: 10
 draw_bold_text_with_bright_colors: true
 
 import:
@@ -42,7 +42,7 @@ selection:
   save_to_clipboard: false
 
 shell:
-  program: /usr/bin/bash
+  program: /bin/bash
 
 key_bindings:
   - { key: Return, mods: Super|Shift, action: SpawnNewInstance }

@@ -7,15 +7,15 @@ autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.tpl
 autocmd BufNewFile * $d
 autocmd BufNewFile * 1
 
-call plug#begin()
+"call plug#begin()
+"
+"Plug 'junegunn/goyo.vim'
+"Plug 'dylanaraps/wal.vim'
+"Plug 'vim-airline/vim-airline'
+"
+"call plug#end()
 
-Plug 'junegunn/goyo.vim'
-Plug 'dylanaraps/wal.vim'
-Plug 'vim-airline/vim-airline'
-
-call plug#end()
-
-colorscheme wal
+"colorscheme wal
 syntax on
 
 set relativenumber
@@ -38,10 +38,10 @@ set wildmode=longest,list,full
 :vmap <leader>c :s/^/	\/\// <CR>
 :vmap <leader>dat :s/\(\w.*\)/type \1 = 0;/g
 :vmap <leader>q :s/\(\w.*\)/'\1'/g <cr>
-:vmap <leader>s :s/\(\w.*\)/sudo sed -i 's\/\1\/\1\/g' $HOME\/path\/to\/file <cr>
+:vmap <leader>s :s/\(\w.*\)/doas sed -i 's\/\1\/\1\/g' $HOME\/path\/to\/file <cr>
 :vmap <leader>d  :s/\(\w.*\)/data[0] = "\1"; <cr>
 
-:cmap w!! w !sudo tee > /dev/null %
+:cmap w!! w !doas tee > /dev/null %
 
 :nnoremap <leader>n :tabn <CR>
 :nnoremap <leader>b :tabp <CR>
