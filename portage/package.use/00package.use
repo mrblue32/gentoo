@@ -10,10 +10,12 @@ media-gfx/krita -qtmedia -heif -debug -pdf -test
 dev-libs/openssl asm sctp
 net-p2p/deluge -gui -libnotify -sound -test console webinterface
 net-misc/curl
+sys-apps/flatpak policykit
 x11-themes/gentoo-artwork -grub -icons -lilo pixmaps offensive
 media-gfx/feh curl
 media-sound/pulseaudio -daemon 
 media-video/pipewire -sound-server
+media-video/ffmpeg #FFTOOLS: -qt-faststart
 # required by net-p2p/deluge-2.1.1-r4::gentoo
 # required by net-p2p/deluge (argument)
 >=net-libs/libtorrent-rasterbar-2.0.9 python
@@ -76,3 +78,6 @@ dev-util/github-cli
 # required by @selected
 # required by @world (argument)
 >=sys-libs/gdbm-1.23 berkdb
+# required by media-gfx/mypaint-2.0.1-r3::gentoo[-test]
+# # required by media-gfx/mypaint (argument)
+>=x11-libs/gdk-pixbuf-2.42.10-r1 jpeg
